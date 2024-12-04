@@ -1,0 +1,10 @@
+<form class="container" [formGroup]="binForm">
+    <h4>Create code snippet </h4>
+    <input type="text" placeholder="Title" [formControl]="title"/>
+    <h5 class="red-text" [hidden]="title.valid|| title.untouched" >Title is requred</h5>
+    <br>
+    <textarea type="text" placeholder="code snippite here" [formControl]="code"></textarea>
+    <h5 class="red-text" [hidden]="code.valid|| code.untouched" >Input is blank</h5>
+    <button class="btn-green" (click)="save()" [disabled] = "binForm.invalid" >Save</button>
+
+</form>

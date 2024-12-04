@@ -1,0 +1,9 @@
+<form class="container" #registerForm = "ngForm">
+    <h4>Signup Here</h4>
+    <input type="email" name="email" placeholder="email here" required pattern = "([a-zA-Z][a-zA-Z0-9]*)\b[^>]*" ngModel  #email="ngModel"/>
+    <h5 class="red-text" [hidden]="email.valid|| email.untouched" >Enter Correct email</h5>
+    <input type="password" name="password" placeholder="password here" required minlength="8" ngModel #password="ngModel"/>
+    <h5 class="red-text" [hidden]="password.valid|| password.untouched" >Password must be greater than 8 characters</h5>
+    <button class="btn-green" (click)="register(registerForm)" [disabled] = "registerForm.invalid" >SignUp</button>
+    <button class="btn-red" (click)="reset(registerForm)" >Reset</button>
+</form>

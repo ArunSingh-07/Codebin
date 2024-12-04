@@ -1,0 +1,16 @@
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ea hic optio
+  distinctio ducimus error atque, dolor facere harum iure.
+</p>
+
+@defer(on viewport){
+<app-heavy></app-heavy>
+}@placeholder{
+<h3>this is a place holder</h3>
+} @loading(after 100ms; minimum 1s){
+<h3>Content is loading</h3>
+}@error{
+<h3>An error occurred</h3>
+}
+
+<!--Keep exploring and looking for more defer features-->
